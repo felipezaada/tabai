@@ -45,7 +45,7 @@ app.post("/barbearia", function(request, response) {
   function welcome(agent) {
     if (data >= 5 && data <= 11)
       agent.add(
-        "Olá Bom dia, seja bem-vindo(a) ao atendimento automatizado da *Barbearia Reis*" +
+        "Olá Bom dia, seja bem-vindo(a) ao atendimento automatizado da *Barbearia Uaitomação*" +
           "\n" +
           "\n" +
           "Você já é nosso cliente?" +
@@ -56,7 +56,7 @@ app.post("/barbearia", function(request, response) {
       );
     else if (data >= 12 && data <= 17)
       agent.add(
-        "Olá Boa tarde, seja bem-vindo(a) ao atendimento automatizado da *Barbearia Reis*" +
+        "Olá Boa tarde, seja bem-vindo(a) ao atendimento automatizado da *Barbearia Uaitomação*" +
           "\n" +
           "\n" +
           "Você já é nosso cliente?" +
@@ -67,7 +67,7 @@ app.post("/barbearia", function(request, response) {
       );
     else
       agent.add(
-        "Olá Boa noite, seja bem-vindo(a) ao atendimento automatizado da *Barbearia Reis*" +
+        "Olá Boa noite, seja bem-vindo(a) ao atendimento automatizado da *Barbearia Uaitomação*" +
           "\n" +
           "\n" +
           "Você já é nosso cliente?" +
@@ -92,7 +92,7 @@ app.post("/barbearia", function(request, response) {
         Telefone: telefone
       }
     ];    
-    axios.post("SUA API AQUI?sheet=agenda", data);
+    axios.post("https://sheetdb.io/api/v1/ec29myohsxv7d?sheet=agenda", data);
     agent.add(`${nome}, o seu agendamento foi realizado com sucesso!\n` +
     "Digite *MENU* para ver as minhas Opções.");
   }
@@ -109,7 +109,7 @@ app.post("/barbearia", function(request, response) {
         Id: uniqueID()
       }
     ];    
-    axios.post("SUA API AQUI", data);
+    axios.post("https://sheetdb.io/api/v1/ec29myohsxv7d", data);
     agent.add(`${nome}, o seu cadastro realizado com sucesso!\n` +
     "Digite *MENU* para ver as minhas Opções.");
   }
@@ -118,7 +118,7 @@ app.post("/barbearia", function(request, response) {
 
   function pesquisa(agent) {
     var telefone = request.body.queryResult.parameters.telefone;    
-    return axios.get("SUA API AQUI").then(res => {
+    return axios.get("https://sheetdb.io/api/v1/ec29myohsxv7d").then(res => {
       res.data.map(coluna => {
         if (coluna.Telefone === telefone)
           response.json({
