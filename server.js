@@ -75,8 +75,8 @@ app.post("/barbearia", function(request, response) {
           "\n" +
           "👉🏼 SIM \n" +
           "👉🏼 NÃO"
-      );
-  }
+      )
+  };
   
   
   //AGENDAMENTO EM PLANILHA
